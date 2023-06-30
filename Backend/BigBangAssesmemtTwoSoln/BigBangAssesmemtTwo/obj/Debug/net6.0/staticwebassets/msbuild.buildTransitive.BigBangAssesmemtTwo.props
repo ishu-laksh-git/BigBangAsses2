@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\BigBangAssesmemtTwo.props" />
+</Project>
