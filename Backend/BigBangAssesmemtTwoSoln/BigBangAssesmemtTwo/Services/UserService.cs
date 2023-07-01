@@ -42,8 +42,6 @@ namespace BigBangAssesmemtTwo.Services
                 user.Token = _tokenGenerate.GenerateToken(user);
             }
             return user;
-
-
         }
 
         public async Task<UserDTO?> Login(UserDTO user)
@@ -83,7 +81,7 @@ namespace BigBangAssesmemtTwo.Services
             if (userResult != null && patientResult != null)
             {
                 user = new UserDTO();
-                user.UserId = patientResult.PatientId;
+                user.UserId = userResult.UserId;
                 user.Role = userResult.Role;
                 user.EmailId = patientResult.Email;
                 user.Token = _tokenGenerate.GenerateToken(user);

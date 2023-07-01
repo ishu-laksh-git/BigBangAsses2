@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BigBangAssesmemtTwo.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230630071920_add")]
+    [Migration("20230701110505_add")]
     partial class add
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -132,6 +132,16 @@ namespace BigBangAssesmemtTwo.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            EmailId = "admin@gmail.com",
+                            PasswordHash = new byte[] { 26, 179, 69, 149, 225, 141, 59, 11, 222, 150, 45, 46, 192, 17, 89, 146, 12, 233, 51, 57, 98, 247, 70, 119, 152, 190, 183, 19, 195, 68, 173, 55, 159, 245, 45, 242, 209, 68, 240, 147, 98, 15, 91, 19, 65, 221, 217, 94, 46, 234, 94, 40, 150, 76, 158, 18, 193, 80, 68, 97, 120, 105, 110, 35 },
+                            PasswordKey = new byte[] { 151, 28, 11, 30, 101, 155, 222, 184, 235, 126, 184, 216, 59, 63, 219, 120, 81, 173, 5, 203, 5, 120, 173, 218, 40, 219, 20, 17, 204, 148, 202, 198, 151, 248, 41, 209, 138, 200, 99, 108, 126, 167, 86, 177, 130, 202, 107, 108, 15, 59, 185, 70, 54, 156, 15, 100, 77, 189, 135, 217, 194, 18, 141, 210, 95, 103, 127, 40, 184, 117, 66, 255, 228, 111, 183, 111, 203, 77, 203, 205, 9, 81, 168, 42, 13, 50, 119, 48, 18, 64, 109, 53, 192, 132, 229, 57, 12, 27, 53, 193, 144, 164, 164, 226, 195, 228, 84, 61, 179, 81, 168, 106, 25, 224, 135, 108, 142, 205, 121, 164, 225, 38, 49, 159, 232, 251, 211, 11 },
+                            Role = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("BigBangAssesmemtTwo.Models.Doctor", b =>

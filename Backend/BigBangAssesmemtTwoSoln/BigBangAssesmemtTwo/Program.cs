@@ -43,6 +43,8 @@ namespace BigBangAssesmemtTwo
             builder.Services.AddScoped<IRepo<Doctor, int>, DoctorRepo>();
             builder.Services.AddScoped<IRepo<User, int>, UserRepo>();
             builder.Services.AddScoped<ITokenGenerate, TokenService>();
+            builder.Services.AddScoped<IAdminService, AdminService>();
+            builder.Services.AddScoped<IPatientService, PatientService>();
 
             builder.Services.AddSwaggerGen(c =>
             {
