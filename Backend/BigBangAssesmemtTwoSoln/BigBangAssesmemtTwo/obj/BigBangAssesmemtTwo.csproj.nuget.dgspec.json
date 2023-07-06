@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Welcome\\source\\repos\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj": {}
+    "C:\\Users\\Welcome\\Desktop\\BigBang2\\Backend\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Welcome\\source\\repos\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj": {
+    "C:\\Users\\Welcome\\Desktop\\BigBang2\\Backend\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Welcome\\source\\repos\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj",
+        "projectUniqueName": "C:\\Users\\Welcome\\Desktop\\BigBang2\\Backend\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj",
         "projectName": "BigBangAssesmemtTwo",
-        "projectPath": "C:\\Users\\Welcome\\source\\repos\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj",
+        "projectPath": "C:\\Users\\Welcome\\Desktop\\BigBang2\\Backend\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj",
         "packagesPath": "C:\\Users\\Welcome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Welcome\\source\\repos\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\obj\\",
+        "outputPath": "C:\\Users\\Welcome\\Desktop\\BigBang2\\Backend\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,0 +1,48 @@
+.admin-view-doctors {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .doctor-list .card {
+    height: 100%;
+  }
+  
+  .doctor-list .card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .doctor-list .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .doctor-list .approval-status {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .doctor-list .approval-status.approved {
+    color: green;
+  }
+  
+  .doctor-list .approval-status.not-approved {
+    color: red;
+  }
+  
+  .doctor-list .buttons {
+    margin-top: 10px;
+  }
+  
+  .doctor-list .btn {
+    margin-right: 5px;
+  }
+
+  .GetAll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+  }
+  

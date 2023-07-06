@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0IvwS11IrCuLGHf2q3+C0KRgiZQi8W6XCGgMtT/k8DF+UdRUTIqUpFjRQksgQMBmr/X4qYWce/r3TEuyfXOI4A==",
+  "dgSpecHash": "4wJkYP20F43pCF3RC8lKnG5JljXNPijj0C0CZ49IWMCEleO1HiV/kOLyqUSqP5KQxOtYeiNoeG7/A8vDhtrtVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Welcome\\source\\repos\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj",
+  "projectFilePath": "C:\\Users\\Welcome\\Desktop\\BigBang2\\Backend\\BigBangAssesmemtTwoSoln\\BigBangAssesmemtTwo\\BigBangAssesmemtTwo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Welcome\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Welcome\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.19\\microsoft.aspnetcore.authentication.jwtbearer.6.0.19.nupkg.sha512",

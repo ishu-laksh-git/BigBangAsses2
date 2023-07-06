@@ -1,0 +1,78 @@
+.bgIg-container{
+    background-image: url("../Assets/doctorbg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:relative;
+    background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.body-text {
+    position: relative;
+    z-index: 1; /* Ensure the text appears on top of the black transparent layer */
+    padding: 40px;
+    color: #fff; /* Set the text color to white */
+
+  }
+.home-container {
+    min-height: 100vh;
+    
+  }
+  
+  .about {
+    flex-grow: 1; /* Allow the section to grow and push the footer to the bottom */
+    padding: 40px;
+  }
+  
+  /* ... */
+  
+  .footer {
+    background-color:black;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .home-hero {
+    padding: 200px 0;
+  }
+  
+  .home-hero-title {
+    font-size: 45px;
+
+  }
+  
+  .home-hero-subtitle {
+    font-size: 21px;
+    font-weight: normal;
+    margin-top: 20px;
+  }
+  
+  .bgIg-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity here (0.5 represents 50% opacity) */
+  }
+
+.home-sign-in{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    width: 15%;
+}

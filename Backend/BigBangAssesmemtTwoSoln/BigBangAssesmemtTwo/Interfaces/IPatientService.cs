@@ -1,4 +1,5 @@
-﻿using BigBangAssesmemtTwo.Models.DTO;
+﻿using BigBangAssesmemtTwo.Models;
+using BigBangAssesmemtTwo.Models.DTO;
 
 namespace BigBangAssesmemtTwo.Interfaces
 {

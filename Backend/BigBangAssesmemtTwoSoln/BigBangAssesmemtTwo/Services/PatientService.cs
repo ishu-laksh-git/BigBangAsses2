@@ -7,14 +7,18 @@ namespace BigBangAssesmemtTwo.Services
     public class PatientService : IPatientService
     {
         private readonly IRepo<Doctor, int> _docRepo;
-        public PatientService(IRepo<Doctor,int> docRepo)
+        private readonly IDocRepo<int, Doctor> _doctorRepo;
+        public PatientService(IRepo<Doctor,int> docRepo, IDocRepo<int, Doctor> doctorRepo)
         {
             _docRepo = docRepo;
+            _doctorRepo = doctorRepo;
         }
         private ListDocDTO ConvertIntoDTO(Doctor doctor)
         {
             ListDocDTO doclist = new ListDocDTO();
+            doclist.Id = doctor.DoctorId;
             doclist.Name = doctor.Name;
+            doclist.isApproved = doctor.IsApproved;
             doclist.Gender = doctor.Gender;
             doclist.Speciality = doctor.Speciality;
             doclist.Experience = doctor.Experience;
@@ -28,7 +32,7 @@ namespace BigBangAssesmemtTwo.Services
             {
                 foreach(var doctor in allDoctors)
                 {
-                    var doc = await _docRepo.Get(doctor.DoctorId);
+                    var doc = await _doctorRepo.Get(doctor.DoctorId);
                     if(doc != null)
                     {
                         var listDTO = ConvertIntoDTO(doc);

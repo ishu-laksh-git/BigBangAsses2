@@ -21,6 +21,13 @@ namespace BigBangAssesmemtTwo
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCors(opts =>
+            {
+                opts.AddPolicy("ReactCors", options =>
+                {
+                    options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
 
             builder.Services.AddDbContext<Context>
                (options => options.UseSqlServer(builder.Configuration.GetConnectionString("Conn")));
@@ -45,6 +52,7 @@ namespace BigBangAssesmemtTwo
             builder.Services.AddScoped<ITokenGenerate, TokenService>();
             builder.Services.AddScoped<IAdminService, AdminService>();
             builder.Services.AddScoped<IPatientService, PatientService>();
+            builder.Services.AddScoped<IDocRepo<int, Doctor>, DocServiceRepo>();
 
             builder.Services.AddSwaggerGen(c =>
             {
@@ -83,6 +91,7 @@ namespace BigBangAssesmemtTwo
             }
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors("ReactCors");
 
 
             app.MapControllers();

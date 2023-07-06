@@ -2,6 +2,7 @@
 using BigBangAssesmemtTwo.Models;
 using BigBangAssesmemtTwo.Models.DTO;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
@@ -10,19 +11,23 @@ namespace BigBangAssesmemtTwo.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    //[EnableCors("ReactCors")]
     public class HospitalController : ControllerBase
     {
         private readonly IService _userService;
         private readonly IRepo<Doctor, int> _docRepo;
         private readonly IAdminService _adminService;
+        private readonly IRepo<User, int> _userRepo;
         private readonly IPatientService _patientService;
-        public HospitalController(IService userService, IRepo<Doctor, int> docrepo, IAdminService adminService,IPatientService patientService)
+        private readonly IDocRepo<int, Doctor> _doctorRepo;
+        public HospitalController(IService userService, IRepo<Doctor, int> docrepo, IAdminService adminService,IPatientService patientService, IDocRepo<int, Doctor> doctorRepo, IRepo<User, int> userRepo)
         {
             _userService = userService;
             _docRepo = docrepo;
             _adminService = adminService;
-            _patientService= patientService;
-
+            _patientService = patientService;
+            _doctorRepo = doctorRepo;
+            _userRepo = userRepo;
         }
         [HttpPost]
         [ProducesResponseType(typeof(UserDTO), StatusCodes.Status201Created)]//Success Response
@@ -148,8 +153,8 @@ namespace BigBangAssesmemtTwo.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
-        [HttpGet]
+        [Authorize(Roles = "Admin,Doctor")]
+        [HttpPost]
         [ProducesResponseType(typeof(Doctor), StatusCodes.Status201Created)]//Success Response
         [ProducesResponseType(StatusCodes.Status404NotFound)]//Failure Response
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -180,7 +185,7 @@ namespace BigBangAssesmemtTwo.Controllers
         {
             try
             {
-                var doc = await _docRepo.Add(doctor);
+                var doc = await _adminService.AddDoctor(doctor);
                 if (doctor != null)
                 {
                     return Ok(doc);
@@ -198,11 +203,11 @@ namespace BigBangAssesmemtTwo.Controllers
         [ProducesResponseType(typeof(Doctor), StatusCodes.Status201Created)]//Success Response
         [ProducesResponseType(StatusCodes.Status404NotFound)]//Failure Response
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Doctor>> DeleteDoctor(int id)
+        public async Task<ActionResult<Doctor>> DeleteDoctor(int id,int uId)
         {
             try
             {
-                var doc = await _docRepo.Get(id);
+                var doc = await _doctorRepo.DeleteDoc(id);
                 if(doc != null)
                 {
                     return Ok(doc);

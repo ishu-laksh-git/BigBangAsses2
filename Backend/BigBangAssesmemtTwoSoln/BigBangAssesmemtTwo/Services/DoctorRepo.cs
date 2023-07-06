@@ -7,6 +7,7 @@ namespace BigBangAssesmemtTwo.Services
     public class DoctorRepo : IRepo<Doctor, int>
     {
         private readonly Context _context;
+
         public DoctorRepo(Context context)
         {
             _context = context;
@@ -39,6 +40,7 @@ namespace BigBangAssesmemtTwo.Services
                 {
                     _context.Doctors.Remove(doctor);
                     await _context.SaveChangesAsync();
+
                     return doctor;
                 }
                 return null;
@@ -53,7 +55,7 @@ namespace BigBangAssesmemtTwo.Services
         {
             try
             {
-                var doctor = await _context.Doctors.SingleOrDefaultAsync(i => i.DoctorId == id);
+                var doctor = await _context.Doctors.SingleOrDefaultAsync(i => i.Users.UserId == id);
                 if (doctor == null)
                 {
                     return null;
